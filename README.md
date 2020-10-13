@@ -1,3 +1,17 @@
+## private routes error
+
+this repo shows the rror not handled by redwood when private routes are in the same line. like this:
+
+```<Router>
+      <Route path="/signin" page={SigninPage} name="signin" />
+      <Private unauthenticated="signin">
+        <Route path="/secret" page={SecretPage} name="secret" /> <Route path="/dashboard" page={DashboardPage} name="dashboard" />
+      </Private>
+      <Route path="/" page={HomePage} name="home" />
+      <Route notfound page={NotFoundPage} />
+    </Router>
+```
+
 # Redwood
 
 > **WARNING:** RedwoodJS software has not reached a stable version 1.0 and should not be considered suitable for production use. In the "make it work; make it right; make it fast" paradigm, Redwood is in the later stages of the "make it work" phase.
@@ -21,4 +35,4 @@ yarn install
 yarn redwood dev
 ```
 
-Your browser should open automatically to `http://localhost:8910` to see the web app. Lambda functions run on `http://localhost:8911` and are also proxied to `http://localhost:8910/.redwood/functions/*`. 
+Your browser should open automatically to `http://localhost:8910` to see the web app. Lambda functions run on `http://localhost:8911` and are also proxied to `http://localhost:8910/.redwood/functions/*`.
