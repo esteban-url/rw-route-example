@@ -14,10 +14,11 @@ const Routes = () => {
     <Router>
       <Route path="/signin" page={SigninPage} name="signin" />
       <Private unauthenticated="signin">
+        {/* two private routes on the same line? 🚨🚨🚨🚨🚨 */}
         <Route path="/secret" page={SecretPage} name="secret" /> <Route path="/dashboard" page={DashboardPage} name="dashboard" />
       </Private>
-      <Route path="/" page={HomePage} name="home" />
-      <Route notfound page={NotFoundPage} />
+      {/* two public routes on the same line? ✅✅✅✅✅ */}
+      <Route path="/" page={HomePage} name="home" /> <Route notfound page={NotFoundPage} />
     </Router>
   )
 }
